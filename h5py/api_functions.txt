@@ -561,4 +561,4 @@ hdf5_hl:
 
   ERROR htri_t H5DSis_attached(hid_t did, hid_t dsid, unsigned int idx)
 
-  ERROR hid_t H5LTopen_file_image(void *buf_ptr, size_t buf_size, unsigned flags)
+  1.8.9 hid_t H5LTopen_file_image(void *buf_ptr, size_t buf_size, unsigned flags)
