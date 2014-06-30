@@ -63,8 +63,8 @@ def make_fid_from_memory(memory, flags):
     """ Get a new FileID by opening or creating a file.
     """
 
-    if flags & ~(h5f.IMAGE_OPEN_R0 | h5f.IMAGE_OPEN_RW | h5f.IMAGE_DONT_COPY | h5f.IMAGE_DONT_RELEASE):
-        raise ValueError("Invalid flags; must be one of h5f.IMAGE_OPEN_R0, h5f.IMAGE_OPEN_RW, h5f.IMAGE_DONT_COPY, h5f.IMAGE_DONT_RELEASE")
+    if flags & ~(h5f.IMAGE_OPEN_RO | h5f.IMAGE_OPEN_RW | h5f.IMAGE_DONT_COPY | h5f.IMAGE_DONT_RELEASE):
+        raise ValueError("Invalid flags; must be one of h5f.IMAGE_OPEN_RO, h5f.IMAGE_OPEN_RW, h5f.IMAGE_DONT_COPY, h5f.IMAGE_DONT_RELEASE")
 
     fid = h5f.open_from_memory(memory, flags)
     return fid
@@ -197,7 +197,7 @@ class File(Group):
 
 
     def __init__(self, name = None, mode=None, driver=None,
-                 libver=None, userblock_size=None, image=None, image_flags = h5f.IMAGE_OPEN_R0, **kwds):
+                 libver=None, userblock_size=None, image=None, image_flags = h5f.IMAGE_OPEN_RO, **kwds):
         """Create a new file object.
 
         See the h5py user guide for a detailed explanation of the options.
